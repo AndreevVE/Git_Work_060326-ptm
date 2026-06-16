@@ -19,8 +19,7 @@ fi
 
 if [ ! -d "$target_directory" ]
 then
-    echo "Ошибка: целевая директория не существует!"
-    exit 1
+    mkdir -p "$target_directory"
 fi
 
 if [ ! -w "$target_directory" ] || [ ! -x "$target_directory" ]
