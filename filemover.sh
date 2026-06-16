@@ -18,6 +18,9 @@ read -p "Request file extension to copy: " file_extension
 
 #4. Запросить новое расширение для файлов.
 
+read -p "Enter new file extension: "  new_file_extension
+
+echo "You chose: $new_file_extension"
 
 #5. Проверка, есть ли файлы с указанным расширением в исходной директории
 
