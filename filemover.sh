@@ -11,7 +11,7 @@
 
 #4. Запросить новое расширение для файлов.
 
-read -p "Enter branch name: "  new_file_extension
+read -p "Enter new file extension: "  new_file_extension
 
 echo "You chose: $new_file_extension"
 
