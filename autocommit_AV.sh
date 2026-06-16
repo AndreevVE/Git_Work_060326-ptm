@@ -3,10 +3,12 @@ work_dir="$1"
 
 cd $work_dir
 
-if [ ! -d .git ]; then
+if [ ! -d ".git" ]; then
   echo "Isn't git repo"
   exit 1
 fi
+
+git add .
 
 if git diff-index --quiet HEAD;
  then
