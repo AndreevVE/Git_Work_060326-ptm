@@ -46,7 +46,11 @@ read -p "Enter new file extension: "  new_file_extension
 echo "You chose: $new_file_extension"
 
 #5. Проверка, есть ли файлы с указанным расширением в исходной директории
-
+files=$(find "$source_directory" -type f -name "*.$file_extension")
+if [ -z "$files" ]; then
+	echo "Ошибка, в дериктории '$source_directory' с расширением  '.$file_extension' не найдено."
+	exit 1
+fi
 
 #6. Копирование файлов с указанным расширением в целевую директорию
 #for file in "$source_directory"/*."$file_extension"
