@@ -2,10 +2,15 @@
 
 if [ -d ".git" ]
 then
-    echo "Git repository found. Committing changes..."
+    echo "Git repository found."
     git add .
-    git commit -m "Auto commit: Malcov Vitalii $(date +"%Y-%m-%d %H:%M:%S")"
-    echo "Changes committed successfully."
+    if git diff --cached --quiet
+    then
+        echo "Нет изменений для коммита."
+    else
+        git commit -m "Автоматический коммит $(date +"%Y-%m-%d %H:%M:%S")"
+        echo "Changes committed successfully."
+    fi
 else
     echo "No Git repository found. Please initialize a Git repository first."
 fi
