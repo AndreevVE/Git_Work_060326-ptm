@@ -10,6 +10,29 @@ echo "Целевая директория: $target_directory"
 
 #2. Проверка существования исходной директории и целевой директории
 
+if [ ! -d "$source_directory" ]
+then
+    echo "Ошибка: исходная директория не существует!"
+    exit 1
+fi
+
+if [ ! -r "$source_directory" ] || [ ! -x "$source_directory" ]
+then
+    echo "Ошибка: исходная директория недоступна!"
+    exit 1
+fi
+
+if [ ! -d "$target_directory" ]
+then
+    mkdir -p "$target_directory"
+fi
+
+if [ ! -w "$target_directory" ] || [ ! -x "$target_directory" ]
+then
+    echo "Ошибка: целевая директория недоступна!"
+    exit 1
+fi
+
 
 #3. Запрос расширения файлов, которые нужно скопировать
 
