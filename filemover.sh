@@ -10,7 +10,11 @@
 
 
 #4. Запросить новое расширение для файлов.
+#!/bin/bash
 
+read -p "Enter branch name: "  new_file_extension
+
+echo "You chose: $new_file_extension"
 
 #5. Проверка, есть ли файлы с указанным расширением в исходной директории
 
