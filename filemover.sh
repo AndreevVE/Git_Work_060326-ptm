@@ -10,7 +10,6 @@
 
 
 #4. Запросить новое расширение для файлов.
-#!/bin/bash
 
 read -p "Enter branch name: "  new_file_extension
 
