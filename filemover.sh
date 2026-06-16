@@ -8,6 +8,8 @@
 
 #3. Запрос расширения файлов, которые нужно скопировать
 
+read -p "Request file extension to copy: " file_extension
+#echo $file_extension
 
 #4. Запросить новое расширение для файлов.
 
