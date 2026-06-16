@@ -13,7 +13,13 @@
 
 
 #5. Проверка, есть ли файлы с указанным расширением в исходной директории
-
+source_directory=DIR1
+file_extension=ssh
+files=$(find "$source_directory" -type f -name "$*.file_extension")
+if [ -z "$files" ]; then
+	echo "Ошибка, в дериктории '$source_directory' с расширением  '.$file_extension' не найдено."
+	exit 1
+fi
 
 #6. Копирование файлов с указанным расширением в целевую директорию
 
