@@ -26,6 +26,12 @@ echo "You chose: $new_file_extension"
 
 
 #6. Копирование файлов с указанным расширением в целевую директорию
+#for file in "$source_directory"/*."$file_extension"
+#do
+#  echo $(basename "${file%.*}")
+#  cp "$file" "$target_directory"/$(basename "${file%.*}")."$new_file_extension"
+#  echo "Файл $(basename "$file") скопирован как $(basename "${file%.*}")."$new_file_extension""
+#done
 
 for file in "$source_directory"/*."$file_extension"; do
     filename_without_extension=$(basename "${file%.*}")
